@@ -1,0 +1,49 @@
+@import "@spectrum-css/vars/dist/globals/spectrum-animationGlobals.css"
+  (prefers-reduced-motion: no-preference);
+
+@import "@spectrum-css/vars/dist/globals/spectrum-colorGlobals.css";
+@import "@spectrum-css/vars/dist/globals/spectrum-colorAliases.css";
+@import "@spectrum-css/vars/dist/globals/spectrum-colorSemantics.css";
+
+@import "@spectrum-css/vars/dist/globals/spectrum-dimensionGlobals.css";
+@import "@spectrum-css/vars/dist/globals/spectrum-dimensionAliases.css";
+
+@import "@spectrum-css/vars/dist/globals/spectrum-fontGlobals.css";
+
+@import "@spectrum-css/vars/dist/globals/spectrum-staticAliases.css";
+
+@import "@spectrum-css/vars/dist/spectrum-light.css"
+  (prefers-color-scheme: light) or (prefers-color-scheme: unset);
+@import "@spectrum-css/vars/dist/spectrum-dark.css" (prefers-color-scheme: dark);
+@import "@spectrum-css/vars/dist/spectrum-medium.css";
+@import "@spectrum-css/vars/dist/spectrum-large.css" (max-width: 960px);
+
+@import "@spectrum-css/vars/dist/components/index.css";
+
+@import "@spectrum-css/tokens/dist/index.css";
+@import "@spectrum-css/typography/dist/index.css";
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+body {
+  margin: var(--block-spacer);
+  font-family: "Open Sans"; /* var(--spectrum-font-family, var(--spectrum-sans-font-family-stack)); */
+  font-style: var(--spectrum-font-style, var(--spectrum-default-font-style));
+  font-size: var(--spectrum-font-size, var(--spectrum-font-size-100));
+  line-height: var(--spectrum-line-height, var(--spectrum-body-line-height));
+
+  background-color: var(--spectrum-background-base-color);
+}
+
+header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.grid {
+  padding-block: 2rem;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

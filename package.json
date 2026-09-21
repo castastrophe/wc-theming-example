@@ -1,0 +1,85 @@
+{
+  "name": "wc-theming-example",
+  "version": "1.0.0",
+  "description": "An example mini site with dynamic web component theming",
+  "license": "MIT",
+  "author": "Cassondra Roberts <castastrophe@users.noreply.github.com> (https://allons-y.llc)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/castastrophe/wc-theming-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/castastrophe/wc-theming-example/issues"
+  },
+  "type": "module",
+  "main": "index.html",
+  "engines": {
+    "node": ">=14 <=18"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "clean": "rm *.processed.css themes/*.processed.css my-component/*.processed.css",
+    "build": "npm-run-all clean build:*",
+    "start": "run-p serve watch:*",
+    "serve": "web-dev-server --watch --esbuild-target auto --node-resolve --open --app-index index.html",
+    "build:css": "postcss **/*[!\\.processed].css --config ./postcss.config.js --base ./ --dir ./ --ext .processed.css",
+    "watch:css": "yarn build:css --watch",
+    "lint": "prettier --check .",
+    "semantic-release": "semantic-release"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": " https://github.com/sponsors/castastrophe"
+    }
+  ],
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "last 2 iOS versions"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.7",
+    "@semantic-release/npm": "^10.0.3",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@spectrum-css/card": "^5.0.38",
+    "@spectrum-css/link": "^4.0.46",
+    "@spectrum-css/tokens": "^10.1.2",
+    "@spectrum-css/typography": "^5.0.21",
+    "@spectrum-css/vars": "^9.0.7",
+    "@spectrum-web-components/action-menu": "^0.32.0",
+    "@web/dev-server": "^0.2.1",
+    "@web/dev-server-esbuild": "^0.4.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "lit": "^2.7.5",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^8.4.2",
+    "postcss-selector-replace": "^1.0.2",
+    "prettier": "^2.8.8",
+    "prettier-package-json": "^2.8.0",
+    "semantic-release": "^21.0.2"
+  },
+  "lint-staged": {
+    "*.{js,md,css}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier-package-json --write"
+    ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

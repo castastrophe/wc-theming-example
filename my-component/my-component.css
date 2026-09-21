@@ -1,0 +1,54 @@
+@import "@spectrum-css/card/dist/index-vars.css";
+@import "@spectrum-css/link/dist/index-vars.css";
+
+:host {
+  background-color: transparent;
+}
+
+.spectrum-Card {
+  background-color: rgba(255, 255, 255, 1);
+  color: var(--spectrum-body-font-color, #444);
+
+  border-color: var(--color-accent);
+
+  border-block-width: 10px;
+  border-inline-width: 1px;
+  height: 100%;
+}
+
+.spectrum-Card:hover {
+  border-color: var(--color-accent);
+}
+
+.spectrum-Card-body {
+  padding-inline: var(--spectrum-alias-item-padding-l);
+}
+
+.spectrum-Card-body,
+.spectrum-Card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  gap: calc(var(--content-spacer) * 1.4);
+}
+
+::slotted([slot="header"]) {
+  color: var(--color-accent-heading);
+}
+
+.spectrum-Card-footer #link-arrow {
+  transition: margin-left 0.2s ease-in-out;
+  border: solid;
+  border-width: 0 0.1em 0.1em 0;
+  display: inline-block;
+  padding: 0.2em;
+  margin-left: 0.4em;
+  transform: rotate(-45deg);
+  border-color: currentcolor;
+}
+
+/* A very subtle visual indicator of the link */
+.spectrum-Card-footer a:hover #link-arrow {
+  margin-left: 0.5em;
+}
