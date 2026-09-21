@@ -20,5 +20,5 @@ Never add AI attribution to a commit or a PR: no `Co-Authored-By` trailer, no
 ## Prose style
 
 Prose in this repo (README, commit bodies, PR descriptions) follows the
-[studio style guide](https://github.com/allonsy-studio/.github/blob/main/AGENTS.md#style-guide):
+[style guide](https://github.com/castastrophe/.github/blob/main/AGENTS.md#style-guide):
 sentence-case headings, `&` over "and", `:` over em dashes.
